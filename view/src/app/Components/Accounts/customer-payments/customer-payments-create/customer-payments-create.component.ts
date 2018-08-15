@@ -6,12 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-payments-create.component.css']
 })
 export class CustomerPaymentsCreateComponent implements OnInit {
-Active_Tab = 'Bank';
+
+  _Customers: any[] =  ['Customer Name One', 'Customer Name Two', '+91 9876543210', '+91 9753186420'];
+
+  _Methods: any[] = ['Cash', 'Card'];
+
+  TodayDate = new Date().toLocaleDateString('en-GB');
+
+  SelectedMethod;
+
   constructor() { }
 
   ngOnInit() {
   }
-Active_Tab_Change(name) {
-  this.Active_Tab = name;
-}
+
+  MethodChange(eve) {
+    console.log(eve);
+  }
+
 }

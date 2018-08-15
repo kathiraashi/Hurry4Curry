@@ -5,18 +5,16 @@
          <div class="Page_Identity">
             <div class="Page_Track">
                <ul >
-                  <li class="HeaderName">Home</li>
+                  <li class="HeaderName">Inventory</li>
                   <li class="arrow">>></li>
-                  <li class= "LinkName">Inventory</li>
-                  <li class="arrow">>></li>
-                  <li >Purchase Request </li>
+                  <li >Purchase Request List </li>
                </ul>
             </div>
          </div>
          <!-- Header Part -->
          <div class="row header_part">
             <div class="col-sm-6">
-               <button class="Create_Button" mat-button [routerLink]="['/purchase_request_create']"> + Create </button>
+               <button class="Create_Button" mat-button [routerLink]="['/Purchase_Request_Create']"> + Create </button>
             </div>
             <div class="col-sm-6">
                <div class="Search_Section">
@@ -33,7 +31,7 @@
                      <th>S.no</th>
                      <th>Request No</th>
                      <th>Requested By</th>
-                     <th>Vendor</th>
+                     <th> Hub </th>
                      <th>Date</th>
                      <th>Status</th>
                      <th>Total</th>
@@ -49,10 +47,10 @@
                         <span class="Style_1">344354</span>
                      </td>
                      <td>
-                        <span class="Style_1"> aashi</span>
+                        <span class="Style_1"> Customer Name</span>
                      </td>
                      <td>
-                        <span class="Style_1">xxx</span>
+                        <span class="Style_1"> Hub One </span>
                      </td>
                      <td>
                         <span class="Style_1">25/05/2017</span>
@@ -76,10 +74,10 @@
                         <span class="Style_1">344354</span>
                      </td>
                      <td>
-                        <span class="Style_1"> aashi</span>
+                        <span class="Style_1"> Customer Name</span>
                      </td>
                      <td>
-                        <span class="Style_1">xxx</span>
+                        <span class="Style_1"> Hub One </span>
                      </td>
                      <td>
                         <span class="Style_1">25/05/2017</span>
@@ -103,10 +101,10 @@
                         <span class="Style_1">344354</span>
                      </td>
                      <td>
-                        <span class="Style_1"> aashi</span>
+                        <span class="Style_1"> Customer Name</span>
                      </td>
                      <td>
-                        <span class="Style_1">xxx</span>
+                        <span class="Style_1"> Hub One </span>
                      </td>
                      <td>
                         <span class="Style_1">25/05/2017</span>
@@ -130,10 +128,10 @@
                         <span class="Style_1">344354</span>
                      </td>
                      <td>
-                        <span class="Style_1"> aashi</span>
+                        <span class="Style_1"> Customer Name</span>
                      </td>
                      <td>
-                        <span class="Style_1">xxx</span>
+                        <span class="Style_1"> Hub One </span>
                      </td>
                      <td>
                         <span class="Style_1">25/05/2017</span>
@@ -157,8 +155,8 @@
 </div>
 
 <!-- Dropdown menus -->
-<mat-menu #Action="matMenu">
-   <button mat-menu-item [routerLink]="['/purchase_request_create']">
+<mat-menu #Action="matMenu" class="MenuStyleOne" [overlapTrigger]="false" xPosition="after" yPosition="below">
+   <button mat-menu-item [routerLink]="['/Purchase_Request_Create']">
       <span>Edit</span>
    </button>
    <button mat-menu-item [routerLink]="['/Purchase_Request_View']">
@@ -167,7 +165,7 @@
    <button mat-menu-item>
       <span>Delete</span>
    </button>
-   <button mat-menu-item>
+   <!-- <button mat-menu-item>
       <span>Approve</span>
    </button>
    <button mat-menu-item>
@@ -175,7 +173,7 @@
    </button>
    <button mat-menu-item>
       <span>Reject</span>
-   </button>
+   </button> -->
 </mat-menu>
    
    

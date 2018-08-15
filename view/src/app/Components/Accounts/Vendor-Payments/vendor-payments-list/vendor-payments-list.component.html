@@ -1,38 +1,35 @@
-<app-header></app-header>
 <div class="Main_Section">
-  <div class="Page_Section">
+   <div class="page_section">
       <div class="container-fluid">
-          <div class="Page_Identity">
+         <div class="Page_Identity">
             <div class="Page_Track">
-                 <ul >
-                   <li class="HeaderName">Home</li>
-                   <li class="arrow">>></li>
-                   <li class= "LinkName">Accounts</li>
-                   <li class="arrow">>></li>
-                   <li >Vendor Payments </li>
-                 </ul>
-              </div>
-           </div>
-           <div class="row header_part">
-              <div class="col-sm-6">
-                <button class="Create_Button" mat-button [routerLink]="['/vendor_payment_create']"> + Create </button>
-              </div>
-              <div class="col-sm-6">
-                <div class="Search_Section">
+               <ul >
+                  <li class= "HeaderName">Accounts</li>
+                  <li class="arrow">>></li>
+                  <li >Purchase Bills List</li>
+               </ul>
+            </div>
+         </div>
+         <div class="row header_part">
+            <div class="col-sm-6">
+            </div>
+            <div class="col-sm-6">
+               <div class="Search_Section">
                   <input type="text" placeholder="Search.." name="search">
                   <i class="material-icons">search</i>
-                </div>
-              </div>
+               </div>
             </div>
+         </div>
          <div class="Table_Section">
             <table>
                <thead>
                   <tr>
                      <th>S.no</th>
-                     <th>Date</th>
-                     <th>Company</th>
                      <th>Bill No</th>
-                     <th>Amount</th>
+                     <th> Hub </th>
+                     <th> Bill Date </th>
+                     <th>Value</th>
+                     <th>Added By</th>
                      <th>Status</th>
                      <th>Action</th>
                   </tr>
@@ -43,86 +40,25 @@
                         <span class="S_no"> 1 </span>
                      </td>
                      <td>
-                        <span class="Style_3">30/07/18 </span>
+                        <span class="Style_1">bill_123</span>
                      </td>
                      <td>
-                        <span class="Style_2">aashi technologies
-                           <h6 class="Style_3">coimbatore,india</h6>
-                        </span>
+                        <span class="Style_1">Hub Name</span>
                      </td>
                      <td>
-                      <span class="Style_2">bill-1
-                         <h6 class="Style_3">order no:12345</h6>
-                      </span>
-                   </td>
-                    <td>
-                        <span class="Style_3">10000
-                        </span>
+                        <span class="Style_1"> 15/08/2017</span>
                      </td>
                      <td>
-                        <span class="Style_3">waiting for clearing
-                        </span>
+                        <span class="Style_1">32300</span>
                      </td>
                      <td>
-                      <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <span class="S_no"> 1 </span>
+                        <span class="Style_1">Admin</span>
                      </td>
                      <td>
-                        <span class="Style_3">30/07/18 </span>
+                        <span class="Style_1">Process</span>
                      </td>
                      <td>
-                        <span class="Style_2">aashi technologies
-                           <h6 class="Style_3">coimbatore,india</h6>
-                        </span>
-                     </td>
-                     <td>
-                      <span class="Style_2">bill-1
-                         <h6 class="Style_3">order no:12345</h6>
-                      </span>
-                   </td>
-                    <td>
-                        <span class="Style_3">10000
-                        </span>
-                     </td>
-                     <td>
-                        <span class="Style_3">waiting for clearing
-                        </span>
-                     </td>
-                     <td>
-                      <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <span class="S_no"> 1 </span>
-                     </td>
-                     <td>
-                        <span class="Style_3">30/07/18 </span>
-                     </td>
-                     <td>
-                        <span class="Style_2">aashi technologies
-                           <h6 class="Style_3">coimbatore,india</h6>
-                        </span>
-                     </td>
-                     <td>
-                      <span class="Style_2">bill-1
-                         <h6 class="Style_3">order no:12345</h6>
-                      </span>
-                   </td>
-                    <td>
-                        <span class="Style_3">10000
-                        </span>
-                     </td>
-                     <td>
-                        <span class="Style_3">waiting for clearing
-                        </span>
-                     </td>
-                     <td>
-                      <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
+                        <button color="primary" mat-raised-button [routerLink]="['/Purchase_Bills_View']"> View </button>
                      </td>
                   </tr>
                   <tr>
@@ -130,28 +66,25 @@
                         <span class="S_no"> 2 </span>
                      </td>
                      <td>
-                        <span class="Style_3">30/07/18 </span>
+                        <span class="Style_1">bill_123</span>
                      </td>
                      <td>
-                        <span class="Style_2">aashi technologies
-                           <h6 class="Style_3">coimbatore,india</h6>
-                        </span>
+                        <span class="Style_1">Hub Name</span>
                      </td>
                      <td>
-                      <span class="Style_2">bill-1
-                         <h6 class="Style_3">order no:12345</h6>
-                      </span>
-                   </td>
-                    <td>
-                        <span class="Style_3">10000
-                        </span>
+                        <span class="Style_1"> 15/08/2017</span>
                      </td>
                      <td>
-                        <span class="Style_3">postponed
-                        </span>
+                        <span class="Style_1">32300</span>
                      </td>
                      <td>
-                      <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
+                        <span class="Style_1">Admin</span>
+                     </td>
+                     <td>
+                        <span class="Style_1">Process</span>
+                     </td>
+                     <td>
+                        <button color="primary" mat-raised-button [routerLink]="['/Purchase_Bills_View']"> View </button>
                      </td>
                   </tr>
                   <tr>
@@ -159,28 +92,25 @@
                         <span class="S_no"> 3 </span>
                      </td>
                      <td>
-                        <span class="Style_3">30/07/18 </span>
+                        <span class="Style_1">bill_123</span>
                      </td>
                      <td>
-                        <span class="Style_2">aashi technologies
-                           <h6 class="Style_3">coimbatore,india</h6>
-                        </span>
+                        <span class="Style_1">Hub Name</span>
                      </td>
                      <td>
-                      <span class="Style_2">bill-1
-                         <h6 class="Style_3">order no:12345</h6>
-                      </span>
-                   </td>
-                    <td>
-                        <span class="Style_3">10000
-                        </span>
+                        <span class="Style_1"> 15/08/2017</span>
                      </td>
                      <td>
-                        <span class="Style_3">waiting for clearing
-                        </span>
+                        <span class="Style_1">32300</span>
                      </td>
                      <td>
-                      <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
+                        <span class="Style_1">Admin</span>
+                     </td>
+                     <td>
+                        <span class="Style_1">Process</span>
+                     </td>
+                     <td>
+                        <button color="primary" mat-raised-button [routerLink]="['/Purchase_Bills_View']"> View </button>
                      </td>
                   </tr>
                   <tr>
@@ -188,77 +118,33 @@
                         <span class="S_no"> 4 </span>
                      </td>
                      <td>
-                        <span class="Style_3">30/07/18 </span>
+                        <span class="Style_1">bill_123</span>
                      </td>
                      <td>
-                        <span class="Style_2">aashi technologies
-                           <h6 class="Style_3">coimbatore,india</h6>
-                        </span>
+                        <span class="Style_1">Hub Name</span>
                      </td>
                      <td>
-                      <span class="Style_2">bill-1
-                         <h6 class="Style_3">order no:12345</h6>
-                      </span>
-                   </td>
-                    <td>
-                        <span class="Style_3">10000
-                        </span>
+                        <span class="Style_1"> 15/08/2017</span>
                      </td>
                      <td>
-                        <span class="Style_3">postponed
-                        </span>
+                        <span class="Style_1">32300</span>
                      </td>
                      <td>
-                      <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
+                        <span class="Style_1">Admin</span>
+                     </td>
+                     <td>
+                        <span class="Style_1">Process</span>
+                     </td>
+                     <td>
+                        <button color="primary" mat-raised-button [routerLink]="['/Purchase_Bills_View']"> View </button>
                      </td>
                   </tr>
-                  <tr>
-                     <td>
-                        <span class="S_no"> 5 </span>
-                     </td>
-                     <td>
-                        <span class="Style_3">30/07/18 </span>
-                     </td>
-                     <td>
-                        <span class="Style_2">aashi technologies
-                           <h6 class="Style_3">coimbatore,india</h6>
-                        </span>
-                     </td>
-                     <td>
-                      <span class="Style_2">bill-1
-                         <h6 class="Style_3">order no:12345</h6>
-                      </span>
-                   </td>
-                    <td>
-                        <span class="Style_3">10000
-                        </span>
-                     </td>
-                     <td>
-                        <span class="Style_3">cleared
-                        </span>
-                     </td>
-                     <td>
-                      <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
-                     </td>
-                  </tr>
-                  </tbody>
-               </table>
-            </div>
+               </tbody>
+            </table>
          </div>
       </div>
    </div>
-
-   <mat-menu #Action="matMenu">
-      <button mat-menu-item [routerLink]="['/vendor_payment_create']">
-         <span>Edit</span>
-      </button>
-      <button mat-menu-item [routerLink]="['/vendor_payment_view']">
-         <span>View</span>
-      </button>
-      <button mat-menu-item>
-         <span>Delete</span>
-      </button>
-   </mat-menu>
-
-
-
+</div>
+    
+    
+     

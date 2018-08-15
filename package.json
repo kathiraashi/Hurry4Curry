@@ -1,0 +1,29 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "sample project",
+  "main": "server",
+  "scripts": {
+    "test": "gulp test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kathiraashi/_US_E-comm.git"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": "kathiravan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kathiraashi/_US_E-comm/issues"
+  },
+  "homepage": "https://github.com/kathiraashi/_US_E-comm#readme",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "cors": "2.8.4",
+    "express": "4.16.2"
+  },
+  "devDependencies": {}
+}

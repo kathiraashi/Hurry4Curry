@@ -6,9 +6,9 @@
          <ul>
             <li class="HeaderName">Inventory</li>
             <li class="arrow">>></li>
-            <li class="LinkName" [routerLink]="['/Purchase_Request_List']">Purchase Requests List</li>
+            <li class="LinkName" [routerLink]="['/Receive_Product_List']">Receive Products List</li>
             <li class="arrow">>></li>
-            <li>Purchase Request View</li>
+            <li>Receive Products View</li>
          </ul>
          </div>
       </div>
@@ -20,19 +20,9 @@
                   <span class="Highlight"> Request </span> Details
                </h5>
                <div class="view_item">
-                  <div class="Static">Ref Number </div>
+                  <div class="Static">Inward Ref </div>
                   <div class="dots"> : </div>
-                  <div class="Data"> Req-00123</div>
-               </div>
-               <div class="view_item">
-                  <div class="Static"> Requested By </div>
-                  <div class="dots"> : </div>
-                  <div class="Data"> Customer Name </div>
-               </div>
-               <div class="view_item">
-                  <div class="Static"> Hub </div>
-                  <div class="dots"> : </div>
-                  <div class="Data"> Hub One </div>
+                  <div class="Data"> Ref-00123</div>
                </div>
                <div class="view_item">
                   <div class="Static">Date</div>
@@ -40,16 +30,25 @@
                   <div class="Data"> 15/08/2018 </div>
                </div>
                <div class="view_item">
-                  <div class="Static"> Description </div>
+                  <div class="Static"> Hub </div>
                   <div class="dots"> : </div>
-                  <div class="Data"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ad accusamus architecto molestias facere mollitia consequatur sapiente incidunt. </div>
+                  <div class="Data"> Hub One </div>
+               </div>
+               <div class="view_item">
+                  <div class="Static"> Purchase Order No </div>
+                  <div class="dots"> : </div>
+                  <div class="Data"> Order-0123 </div>
+               </div>
+               <div class="view_item">
+                  <div class="Static"> Purchase Date </div>
+                  <div class="dots"> : </div>
+                  <div class="Data"> 15/08/2018  </div>
                </div>
                <br>
                <div> 
-                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Approve </button>
-                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Reject </button>
-                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Forward </button>
-                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Modify </button>
+                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Receive </button>
+                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Return </button>
+                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Back </button>
                </div>
             </div>
          <br>

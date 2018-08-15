@@ -4,7 +4,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 import { DeleteConfirmationComponent } from '../../../../Components/Common-Components/delete-confirmation/delete-confirmation.component';
-import { ModelBankRegisterComponent } from '../../../../models/Accounts/model-bank-register/model-bank-register.component';
+
 @Component({
   selector: 'app-list-bank-registers',
   templateUrl: './list-bank-registers.component.html',
@@ -17,18 +17,6 @@ export class ListBankRegistersComponent implements OnInit {
 
   ngOnInit() {
   }
-  CreateBankRegister() {
-    const initialState = {
-       Type: 'Create'
-    };
-    this.bsModalRef = this.modalService.show(ModelBankRegisterComponent, Object.assign({initialState}, { class: 'modal-md' }));
- }
- ViewBankRegister() {
-  const initialState = {
-    Type: 'View'
-  };
-  this.bsModalRef = this.modalService.show(ModelBankRegisterComponent, Object.assign({initialState}, { class: 'modal-md' }));
-}
 
   DeleteBankRegister() {
     const initialState = {

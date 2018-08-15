@@ -8,43 +8,43 @@
     height:40px;
     width: 100%;
     margin-bottom: 5px;
-}
-.Page_Identity .Page_Track{
+ }
+ .Page_Identity .Page_Track{
     width:100%;
     line-height: 35px;
-}
-.Page_Identity .Page_Track ul{
+ }
+ .Page_Identity .Page_Track ul{
     display: flex;
     list-style-type: none;
     padding: 0px;
     margin: 0px;
     align-items: center;
     float: right;
-}
-.Page_Identity .Page_Track ul li {
-    color: #a5adb1;
-    font-size: 13px;
+ }
+ .Page_Identity .Page_Track ul li {
+   font-size: 13px;
     font-weight: 500;
     margin-left: 5px;
-}
-.Page_Identity .Page_Track ul li.arrow{
+ }
+ .Page_Identity .Page_Track ul li.arrow{
     letter-spacing: -4px;
     font-size: 19px;
     transform: scale(.6, 1);
-}
-.Page_Identity .Page_Track ul li.arrowGreen{
+ }
+ .Page_Identity .Page_Track ul li.arrowGreen{
     letter-spacing: -4px;
     font-size: 19px;
     transform: scale(.6, 1);
-    color: #4ab65f;
-}
-.Page_Identity .Page_Track ul li.HeaderName{
-    color: #4ab65f;
-}
-.Page_Identity .Page_Track ul li.LinkName{
-    color: #4ab65f;
+    color: #c00a27;
+ }
+ .Page_Identity .Page_Track ul li.HeaderName{
+    color: #c00a27;
+ }
+ .Page_Identity .Page_Track ul li.LinkName{
+    color: #c00a27;
     cursor: pointer;
-}
+ }
+ 
 /* ----------- Create and Search Section ---------- */
 .header_part{
     margin-bottom: 15px;
@@ -82,7 +82,7 @@
     position: absolute;
     right: 0px;
     padding: 7px 5px;
-    color: #4ab65f;
+    color: #c00a27;
     font-weight: 600;
     cursor: pointer;
 }

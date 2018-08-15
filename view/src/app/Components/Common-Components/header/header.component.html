@@ -58,10 +58,31 @@
                   <span> &nbsp; Inventory </span> 
                </span>
                <ul class="Menu_Tree_View">
-                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/purchase_request_list']"><a> Purchase Requests </a></li>
-                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/List_Stock_Values']"><a> stock values </a></li>
-                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Vendor_Bills_List']"><a> Purchase Bills </a></li>
-                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Vendor_List']"><a> Vendor </a></li>
+                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Purchase_Request_List']">
+                     <a> Purchase Requests </a>
+                     <span class="Hidden_Links">
+                        <span [routerLink]="['/Purchase_Request_Create']"></span>
+                        <span [routerLink]="['/Purchase_Request_View']"></span>
+                     </span>
+                  </li>
+                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Receive_Product_List']">
+                     <a> Receive Products </a>
+                     <span class="Hidden_Links">
+                        <span [routerLink]="['/Receive_Product_View']"></span>
+                     </span>
+                  </li>
+                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Stock_Values_List']">
+                     <a> stock values </a>
+                     <span class="Hidden_Links">
+                        <span [routerLink]="['/Stock_Values_View']"></span>
+                     </span>
+                  </li>
+                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Vendor_Bills_List']">
+                     <a> Purchase Bills </a>
+                     <span class="Hidden_Links">
+                        <span [routerLink]="['/Vendor_Bills_View']"></span>
+                     </span>
+                  </li>
                </ul>
             </span>
          </li>
@@ -73,22 +94,37 @@
                   <span> &nbsp; Accounts </span> 
                </span>
                <ul class="Menu_Tree_View">
-                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/account_customer_payments_list']"><a> Customer Payments </a></li>
-                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/vendor_payment_list']"><a>Vendor Payments</a></li>
-                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/List_Bank_Register']"><a>Bank Registers</a></li>
-                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/List_Cash_Register']"><a>Cash Registers</a></li>
+                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Sales_Bills_List']">
+                    <a> Sales Bill </a>
+                     <span class="Hidden_Links">
+                        <span [routerLink]="['/Sales_Bills_Create']"></span>
+                        <span [routerLink]="['/Sales_Bills_View']"></span>
+                     </span>
+                  </li>
+                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Purchase_Bills_List']">
+                     <a>Purchase Bill</a>
+                     <span class="Hidden_Links">
+                        <span [routerLink]="['/Purchase_Bills_View']"></span>
+                     </span>
+                  </li>
+                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Bank_Registers_List']"><a>Bank Registers</a></li>
+                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Cash_Register_List']"><a>Cash Registers</a></li>
                </ul>
             </span>
          </li>
          <!-- Product -->
-         <li class="Menu_List" [routerLinkActive]="['active']" [routerLink]="['/List_Product']" style="outline:none;">
+         <li class="Menu_List" [routerLinkActive]="['active']" [routerLink]="['/Products_List']" style="outline:none;">
             <span class="Menu">
                <i class="material-icons">people</i>
                <span > &nbsp; Product </span> 
             </span>
+            <span class="Hidden_Links">
+               <span [routerLink]="['/Product_Create']"></span>
+               <span [routerLink]="['/Product_View']"></span>
+            </span>
          </li>
         <!-- HR -->
-         <li [routerLinkActive]="['active']" class="Menu_List" >
+         <!-- <li [routerLinkActive]="['active']" class="Menu_List" >
             <span class="Menu_Tree">
                <span class="Menu">
                   <i class="material-icons">people</i>
@@ -102,10 +138,14 @@
                   <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/List_Payroll_Master']"><a> Payroll Master </a></li>
                </ul>
             </span>
-         </li>
+         </li> -->
      </ul>
    </div>
-   <div *ngIf="Current_Url !== '/Crm_Bill_Create'" class="Footer">
+   <div *ngIf=" Current_Url !== '/Crm_Bill_Create' 
+                && Current_Url !== '/Purchase_Request_Create' 
+                && Current_Url !==  '/Sales_Bills_Create' 
+                && Current_Url !== '/Product_Create'" 
+        class="Footer">
       <span><i class="material-icons pull-right Add" [routerLink]="['/Crm_Bill_Create']">add_circle_outline</i></span>
    </div>
 </div>

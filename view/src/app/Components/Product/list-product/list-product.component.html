@@ -5,9 +5,9 @@
     <div class="Page_Identity">
       <div class="Page_Track">
         <ul>
-          <li class="HeaderName">Home</li>
+          <li class="HeaderName">Product</li>
           <li class="arrow">>></li>
-          <li>Product</li>
+          <li>Products List</li>
         </ul>
       </div>
     </div>
@@ -15,7 +15,7 @@
     <!-- Create and search Section -->
     <div class="row header_part">
       <div class="col-sm-6">
-        <button class="Create_Button" mat-button [routerLink]="['/Create_Product']"> + Create </button>
+        <button class="Create_Button" mat-button [routerLink]="['/Product_Create']"> + Create </button>
       </div>
       <div class="col-sm-6">
         <div class="Search_Section">
@@ -131,11 +131,11 @@
 </div>
 
 <!-- Dropdown menus -->
-<mat-menu #Action="matMenu">
-  <button mat-menu-item [routerLink]="['/Create_Product']">
+<mat-menu #Action="matMenu" class="MenuStyleOne" [overlapTrigger]="false" yPosition="below" xPosition="after">
+  <button mat-menu-item [routerLink]="['/Product_Create']">
     <span>Edit</span>
   </button>
-  <button mat-menu-item [routerLink]="['/View_Product']">
+  <button mat-menu-item [routerLink]="['/Product_View']">
     <span>View</span>
   </button>
   <button mat-menu-item>
