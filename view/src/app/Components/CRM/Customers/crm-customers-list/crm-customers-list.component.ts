@@ -21,7 +21,7 @@ export class CrmCustomersListComponent implements OnInit {
 
   DeleteCustomers() {
     const initialState = {
-       Text: 'Customers'
+       Text: 'Customer'
     };
     this.bsModalRef = this.modalService.show(DeleteConfirmationComponent, Object.assign({initialState}, { class: 'modal-sm' }));
  }

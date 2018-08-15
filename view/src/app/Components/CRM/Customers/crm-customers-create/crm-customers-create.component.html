@@ -4,52 +4,52 @@
       <div class="Page_Identity">
          <div class="Page_Track">
             <ul>
-               <li class="HeaderName">Home</li>
+               <li class="HeaderName">Sales</li>
                <li class="arrow">>></li>
-               <li class= "LinkName">Sales</li>
+               <li class="LinkName" [routerLink]="['/Crm_Customers_List']">Customers List</li>
                <li class="arrow">>></li>
-               <li >Customers</li>
+               <li >Customers Create</li>
             </ul>
          </div>
       </div>
       <form>
          <div class="row">
             <!-- Company details -->
-            <div class="Company_Details">
             <div class="col-sm-12">
+               <div class="Company_Details">
                   <div class="row">
-                  <div class="col-sm-5 Form_Input">
-                     <label>Customer Name:</label>
-                     <br>
-                     <input type="text">
+                     <div class="col-sm-5 Form_Input">
+                        <label>Customer Name:</label>
+                        <br>
+                        <input type="text">
+                     </div>
+                     <div class="col-sm-5 Form_Input">
+                        <label>Contact No:</label>
+                        <br>
+                        <input type="text">
+                     </div>
+                     <div class="col-sm-5 Form_Input">
+                        <label>GST NO:</label>
+                        <br>
+                        <input type="text" >
+                     </div>
+                     <div class="col-sm-5 Form_Input">
+                        <label>Email Id:</label>
+                        <br>
+                        <input type="text" >
+                     </div>
+                     <div class="col-sm-5 Form_TextArea">
+                        <label>Address:</label>
+                        <br>
+                        <textarea class="Description" rows="3"></textarea>
+                     </div>
                   </div>
-                  <div class="col-sm-5 Form_Input">
-                     <label>Contact No:</label>
-                     <br>
-                     <input type="text">
-                  </div>
-                  <div class="col-sm-5 Form_Input">
-                     <label>GST NO:</label>
-                     <br>
-                     <input type="text" >
-                  </div>
-                  <div class="col-sm-5 Form_Input">
-                     <label>Email Id:</label>
-                     <br>
-                     <input type="text" >
-                  </div>
-                  <div class="col-sm-5 Form_TextArea">
-                     <label>Address:</label>
-                     <br>
-                     <textarea class="Description" rows="3"></textarea>
-                  </div>
+                  <div class="row" style="margin-top:20px;">
+                     <div class="col-sm-12 text-right">
+                        <button mat-raised-button color="primary"> Submit </button>
+                     </div>
                   </div>
                </div>
-            </div>
-         </div>
-         <div class="row" style="margin-top:20px;">
-            <div class="col-sm-12 text-right">
-               <button mat-raised-button color="primary"> Submit </button>
             </div>
          </div>
       </form>

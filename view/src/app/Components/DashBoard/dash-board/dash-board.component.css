@@ -54,7 +54,7 @@
  .Card {
     background: linear-gradient(229deg, #74da8b, #009e26);
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.3);
-    height: 100px;
+    height: 105px;
  }
  .Card .Card_Body {    
     height: 70px;
@@ -66,7 +66,7 @@
     text-align: center;
  }
  .Card .Card_Body .Card_Left i {
-    font-size: 25px;
+    font-size: 45px;
     line-height: 85px;
  }
  .Card .Card_Body .Card_Left .people{

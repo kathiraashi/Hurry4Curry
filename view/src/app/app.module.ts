@@ -141,10 +141,6 @@
                   import { MainCrmCustomersViewComponent } from './Components/CRM/Customers/Crm-Customers-View/main-crm-customers-view/main-crm-customers-view.component';
             // Sales-customers-create
                 import { CrmCustomersCreateComponent } from './Components/CRM/Customers/crm-customers-create/crm-customers-create.component';
-        // Invoice ---------------------
-            import { CrmInvoiceCreateComponent } from './Components/CRM/Invoice/crm-invoice-create/crm-invoice-create.component';
-            import { CrmInvoiceListComponent } from './Components/CRM/Invoice/crm-invoice-list/crm-invoice-list.component';
-            import { CrmInvoiceViewComponent } from './Components/CRM/Invoice/crm-invoice-view/crm-invoice-view.component';
       // Leads Folder ----------------------------------------------------
 
 // models
@@ -364,10 +360,6 @@ import { CrmBillViewComponent } from './Components/CRM/bill/crm-bill-view/crm-bi
                     MainCrmCustomersViewComponent,
                     // SubComponents
                     CrmCustomersCreateComponent,
-        // Invoice
-        CrmInvoiceCreateComponent,
-        CrmInvoiceListComponent,
-        CrmInvoiceViewComponent,
     // models
     // models
         // HRMS

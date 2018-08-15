@@ -3,55 +3,133 @@
       <!-- page Identity -->
       <div class="Page_Identity">
          <div class="Page_Track">
-            <ul>
-               <li class="HeaderName">Home</li>
-               <li class="arrow">>></li>
-               <li class="HeaderName">Sales</li>
-               <li class="arrow">>></li>
-               <li>Customers</li>
-            </ul>
+         <ul>
+            <li class="HeaderName">Sales</li>
+            <li class="arrow">>></li>
+            <li class="LinkName" [routerLink]="['/Crm_Customers_List']">Customers List</li>
+            <li class="arrow">>></li>
+            <li>Customer View</li>
+         </ul>
          </div>
       </div>
-      <form>
-         <div class="row">
-            <!-- Company details -->
-            <div class="Company_Details">
-               <br>
-               <div class="col-sm-12">
-                  <div class="view_item">
-                     <div class="Static">Customer Name </div>
-                     <div class="dots"> : </div>
-                     <div class="Data"> Customer Name</div>
-                  </div>
-                  <div class="view_item">
-                     <div class="Static">Contact No</div>
-                     <div class="dots"> : </div>
-                     <div class="Data"> Contact No</div>
-                  </div>
-                  <div class="view_item">
-                     <div class="Static">GST NO </div>
-                     <div class="dots"> : </div>
-                     <div class="Data">GST NO</div>
-                  </div>
-                  <div class="view_item">
-                     <div class="Static">Email Id </div>
-                     <div class="dots"> : </div>
-                     <div class="Data"> Email Id </div>
-                  </div>
-                  <div class="view_item">
-                     <div class="Static">Address </div>
-                     <div class="dots"> : </div>
-                     <div class="Data"> dsdfhgbhjh </div>
-                  </div>
-               </div>
-               <br>
+      <div class="row">
+         <!-- Company details -->
+         <div class="col-sm-4">
+         <div class="Company_Details">
+            <div class="view_item">
+               <div class="Static">Customer Name </div>
+               <div class="dots"> : </div>
+               <div class="Data"> Customer Name</div>
+            </div>
+            <div class="view_item">
+               <div class="Static">Contact No</div>
+               <div class="dots"> : </div>
+               <div class="Data"> Contact No</div>
+            </div>
+            <div class="view_item">
+               <div class="Static">GST NO </div>
+               <div class="dots"> : </div>
+               <div class="Data">GST NO</div>
+            </div>
+            <div class="view_item">
+               <div class="Static">Email Id </div>
+               <div class="dots"> : </div>
+               <div class="Data"> Email Id </div>
+            </div>
+            <div class="view_item">
+               <div class="Static">Address </div>
+               <div class="dots"> : </div>
+               <div class="Data"> dsdfhgbhjh </div>
             </div>
          </div>
-         <div class="row" style="margin-top:20px;">
-            <div class="col-sm-12 text-right">
-            </div>
+         <br>
          </div>
-      </form>
+         <div class="col-sm-8">
+            <div class="Table_Section">
+               <table>
+                  <thead>
+                     <tr>
+                        <th>S.no</th>
+                        <th>Order No</th>
+                        <th>Value</th>
+                        <th>Added By</th>
+                        <th>Status</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>
+                           <span class="S_no"> 1 </span>
+                        </td>
+                        <td>
+                           <span class="Style_1">bill_123</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">32300</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">Admin</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">Process</span>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <span class="S_no"> 2 </span>
+                        </td>
+                        <td>
+                           <span class="Style_1">bill_123</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">32300</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">Admin</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">Process</span>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <span class="S_no"> 3 </span>
+                        </td>
+                        <td>
+                           <span class="Style_1">bill_123</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">32300</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">Admin</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">Process</span>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <span class="S_no"> 4 </span>
+                        </td>
+                        <td>
+                           <span class="Style_1">bill_123</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">32300</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">Admin</span>
+                        </td>
+                        <td>
+                           <span class="Style_1">Process</span>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <br>
+         </div>
+      </div>
    </div>
 </div>
-

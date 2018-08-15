@@ -5,18 +5,16 @@
           <div class="Page_Identity">
              <div class="Page_Track">
                 <ul >
-                   <li class="HeaderName">Home</li>
-                   <li class="arrow">>></li>
                    <li class= "LinkName">Sales</li>
                    <li class="arrow">>></li>
-                   <li >Customers </li>
+                   <li >Customers List </li>
                 </ul>
              </div>
           </div>
           <!-- Header Part -->
           <div class="row header_part">
              <div class="col-sm-6">
-                <button class="Create_Button" mat-button [routerLink]="['/crm_customers_create']"> + Create </button>
+                <button class="Create_Button" mat-button [routerLink]="['/Crm_Customers_Create']"> + Create </button>
              </div>
              <div class="col-sm-6">
                 <div class="Search_Section">
@@ -56,9 +54,16 @@
                          <span class="Style_1">sample@gmail.com</span>
                       </td>
                       <td>
-                         <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action
-                         </button>
-                      </td>
+                        <button [routerLink]="['/Crm_Customers_View']" class="Table_Action_mini Bg_Info" mat-mini-fab color="primary">
+                           <i class="material-icons">zoom_in</i>
+                        </button>
+                        <button [routerLink]="['/Crm_Customers_Create']" class="Table_Action_mini Bg_warning" mat-mini-fab color="primary">
+                           <i class="material-icons">edit</i>
+                        </button>
+                        <button (click)="DeleteCustomers()" class="Table_Action_mini Bg_Danger" mat-mini-fab color="primary">
+                           <i class="material-icons">delete_forever</i>
+                        </button>
+                     </td>
                    </tr>
                    <tr>
                     <td>
@@ -77,8 +82,15 @@
                        <span class="Style_1">sample@gmail.com</span>
                     </td>
                     <td>
-                       <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action
-                       </button>
+                        <button [routerLink]="['/Crm_Customers_View']" class="Table_Action_mini Bg_Info" mat-mini-fab color="primary">
+                           <i class="material-icons">zoom_in</i>
+                        </button>
+                        <button [routerLink]="['/Crm_Customers_Create']" class="Table_Action_mini Bg_warning" mat-mini-fab color="primary">
+                           <i class="material-icons">edit</i>
+                        </button>
+                        <button (click)="DeleteCustomers()" class="Table_Action_mini Bg_Danger" mat-mini-fab color="primary">
+                           <i class="material-icons">delete_forever</i>
+                        </button>
                     </td>
                  </tr>
                  <tr>
@@ -98,8 +110,15 @@
                        <span class="Style_1">sample@gmail.com</span>
                     </td>
                     <td>
-                       <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action
-                       </button>
+                        <button [routerLink]="['/Crm_Customers_View']" class="Table_Action_mini Bg_Info" mat-mini-fab color="primary">
+                           <i class="material-icons">zoom_in</i>
+                        </button>
+                        <button [routerLink]="['/Crm_Customers_Create']" class="Table_Action_mini Bg_warning" mat-mini-fab color="primary">
+                           <i class="material-icons">edit</i>
+                        </button>
+                        <button (click)="DeleteCustomers()" class="Table_Action_mini Bg_Danger" mat-mini-fab color="primary">
+                           <i class="material-icons">delete_forever</i>
+                        </button>
                     </td>
                  </tr>
                  <tr>
@@ -119,8 +138,15 @@
                        <span class="Style_1">sample@gmail.com</span>
                     </td>
                     <td>
-                       <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action
-                       </button>
+                        <button [routerLink]="['/Crm_Customers_View']" class="Table_Action_mini Bg_Info" mat-mini-fab color="primary">
+                           <i class="material-icons">zoom_in</i>
+                        </button>
+                        <button [routerLink]="['/Crm_Customers_Create']" class="Table_Action_mini Bg_warning" mat-mini-fab color="primary">
+                           <i class="material-icons">edit</i>
+                        </button>
+                        <button (click)="DeleteCustomers()" class="Table_Action_mini Bg_Danger" mat-mini-fab color="primary">
+                           <i class="material-icons">delete_forever</i>
+                        </button>
                     </td>
                  </tr>
                 </tbody>
@@ -130,17 +156,5 @@
       </div>
  </div>
  
- <!-- Dropdown menus -->
- <mat-menu class="MenuStyleOne" #Action="matMenu" [overlapTrigger]="false" xPosition="after" yPosition="below">
-    <button mat-menu-item [routerLink]="['/crm_customers_create']">
-       <span>Edit</span>
-    </button>
-    <button mat-menu-item [routerLink]="['/main_crm_customers_view']">
-       <span>View</span>
-    </button>
-    <button mat-menu-item (click)="DeleteCustomers()">
-       <span>Delete</span>
-    </button>
-</mat-menu>
     
     

@@ -8,8 +8,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-   constructor( public router: Router) {
+  Current_Url;
 
+   constructor( public router: Router) {
+      this.Current_Url = this.router.url;
+      router.events.subscribe(() => {
+         this.Current_Url = this.router.url;
+      });
    }
 
    ngOnInit() {

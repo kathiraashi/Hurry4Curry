@@ -55,6 +55,13 @@
    float: left;
    min-width: 100px;
 }
+.Header_Page .Header_Two .Menus .Menu_List.active{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    min-width: 100px;
+    background-color:#710617;
+ }
 /* Menus */
 .Header_Page .Header_Two .Menus .Menu_List .Menu{
    color: #ffffff;
@@ -125,6 +132,9 @@
 .Header_Page .Menu_Tree .Menu_Tree_View .Menu_Tree_List > .Menu_Tree > .Menu_Tree_View{
    left: 102%;
    top: 0px;
+}
+.Header_Page .Hidden_Links{
+    display: none;
 }
 .Footer{
     position: fixed;

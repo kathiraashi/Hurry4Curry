@@ -15,8 +15,6 @@ import { MainProductSettingsComponent } from './Components/Settings/Product-Sett
 import { CrmCustomersListComponent } from './Components/CRM/Customers/crm-customers-list/crm-customers-list.component';
 import { MainCrmCustomersViewComponent } from './Components/CRM/Customers/Crm-Customers-View/main-crm-customers-view/main-crm-customers-view.component';
 import { CrmCustomersCreateComponent } from './Components/CRM/Customers/crm-customers-create/crm-customers-create.component';
-import { CrmInvoiceListComponent } from './Components/CRM/Invoice/crm-invoice-list/crm-invoice-list.component';
-import { CrmInvoiceCreateComponent } from './Components/CRM/Invoice/crm-invoice-create/crm-invoice-create.component';
 import { PurchaseRequestListComponent } from './Components/Purchase/PurchaseRequest/purchase-request-list/purchase-request-list.component';
 import {PurchaseRequestCreateComponent  } from './Components/Purchase/PurchaseRequest/purchase-request-create/purchase-request-create.component';
 import { VendorBillsListComponent } from './Components/Purchase/VendorBills/vendor-bills-list/vendor-bills-list.component';
@@ -25,7 +23,6 @@ import { PurchaseRequestViewComponent } from './Components/Purchase/PurchaseRequ
 import { VendorBillsCreateComponent } from './Components/Purchase/VendorBills/vendor-bills-create/vendor-bills-create.component';
 import { VendorBillsViewComponent } from './Components/Purchase/VendorBills/vendor-bills-view/vendor-bills-view.component';
 import { VendorCreateComponent } from './Components/Purchase/Vendor/vendor-create/vendor-create.component';
-import { CrmInvoiceViewComponent } from './Components/CRM/Invoice/crm-invoice-view/crm-invoice-view.component';
 import { MainVendorViewComponent } from './Components/Purchase/Vendor/vendor-view/main-vendor-view/main-vendor-view.component';
 import { AccountsCustomerPaymentsListComponent } from './Components/Accounts/customer-payments/accounts-customer-payments-list/accounts-customer-payments-list.component';
 import { CustomerPaymentsCreateComponent } from './Components/Accounts/customer-payments/customer-payments-create/customer-payments-create.component';
@@ -150,16 +147,16 @@ const appRoutes: Routes = [
       data: {   animation: { value: 'Crm_Customers_List'}   }
    },
    {
-      path: 'main_crm_customers_view',
+      path: 'Crm_Customers_View',
       component: MainCrmCustomersViewComponent,
       canActivate: [AuthGuard],
-      data: {   animation: { value: 'main_crm_customers_view'}   }
+      data: {   animation: { value: 'Crm_Customers_View'}   }
    },
    {
-      path: 'crm_customers_create',
+      path: 'Crm_Customers_Create',
       component: CrmCustomersCreateComponent,
       canActivate: [AuthGuard],
-      data: {   animation: { value: 'crm_customers_create'}   }
+      data: {   animation: { value: 'Crm_Customers_Create'}   }
    },
    {
       path: 'Crm_Bill_List',
@@ -304,12 +301,6 @@ const appRoutes: Routes = [
       component: VendorCreateComponent,
       canActivate: [AuthGuard],
       data: {   animation: { value: 'Vendor_Create'}   }
-   },
-   {
-      path: 'crm_invoice_view',
-      component: CrmInvoiceViewComponent,
-      canActivate: [AuthGuard],
-      data: {   animation: { value: 'crm_invoice_view'}   }
    },
    {
       path: 'main_vendor_view',

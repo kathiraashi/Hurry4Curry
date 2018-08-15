@@ -40,6 +40,16 @@
       color: #c00a27;
       cursor: pointer;
    }
+
+/* Company details */
+   .Company_Details{
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      border-top: 2px solid #c00a27;
+      box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.3);
+   }
+
 /* Form Style */
    .Form_Input label {
       font-size: 14px;
@@ -115,86 +125,6 @@
    .Form_Select select option{
       color: rgb(79, 107, 123);
       width: 100%;
-   }
-/* Company etails */
-   .Company_Details{
-      background-color: #fff;
-      margin: 10px;
-      padding: 20px;
-      margin-left: 15px;
-      width: 100%;
-      border-radius: 5px;
-      border-top: 2px solid #c00a27;
-   }
-/* Table Section */
-   .Table_Section{
-      background-color: #fff;
-      margin: 10px;
-      padding: 20px;
-      margin-left: 15px;
-      width: 100%;
-      border-radius: 5px;
-      border-top: 2px solid #49B660;
-   }
-   .table_section{
-      border-collapse: collapse;
-      width: 100%;
-      table-layout: fixed;
-      margin-right:10px;
-   }
-   .table_section .table_head{
-      font-size:16px;
-      color:#A6A6A6;
-      cursor:pointer;
-   }
-   .table_section tr{
-      border:1px solid #e4dcdc;
-   }
-   .table_section thead th{
-   text-align:center;
-   }
-   .table_section thead .S_No{
-      width:50px;
-   }
-   .table_section thead .Action{
-      width:60px;
-   }
-   .table_section tbody td{
-      background-color:#F5F5F5;
-      width:100%;
-      text-align:center;
-      padding:0px 10px;
-   }
-   .table_section tbody td span{
-      font-size:16px;
-      font-weight:400;
-      color:#6d6868;
-   }
-   .Table_Section table tbody tr td .Action_Section{
-      color: #ffffff;
-      height: 35px;
-      width: 35px;
-      line-height: 30px;
-      display: flex;
-      border-radius: 5px;
-      cursor: pointer;
-      float: right;
-      margin-right: 10px;
-   }
-   .Table_Section table tbody tr td .Action_Section i {
-      width: 100%;
-      line-height: 35px;
-   }
-/* Product Button */
-   .Add_Product_Button{
-      float: right;
-      font-size: 16px;
-      font-weight: 400;
-      background-color: #49B660;
-      color: #fff;
-      border: 1px solid #49B660;
-      padding: 5px 10px;
-      border-radius: 4px;
    }
 
   

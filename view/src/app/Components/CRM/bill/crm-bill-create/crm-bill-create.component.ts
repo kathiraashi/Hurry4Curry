@@ -7,15 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrmBillCreateComponent implements OnInit {
 
-  Active_Tab = 'Product_Details';
+
+  _Customers: any[] =  ['Customer Name One', 'Customer Name Two', '+91 9876543210', '+91 9753186420'];
+
+  _Methods: any[] = ['Cash', 'Card'];
+
+  TodayDate = new Date().toLocaleDateString('en-GB');
+
+  SelectedMethod;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  Active_Tab_Change(name) {
-    this.Active_Tab = name;
+  MethodChange(eve) {
+    console.log(eve);
   }
 
 }
