@@ -237,6 +237,9 @@ import { ModelBankRegisterComponent } from './models/Accounts/model-bank-registe
 import { ModelChequeEntriesComponent } from './models/Accounts/model-cheque-entries/model-cheque-entries.component';
 import { ViewChequeEntriesComponent } from './Components/Accounts/Cheque-Entries/view-cheque-entries/view-cheque-entries.component';
 import { DashBoardComponent } from './Components/DashBoard/dash-board/dash-board.component';
+import { CrmBillCreateComponent } from './Components/CRM/bill/crm-bill-create/crm-bill-create.component';
+import { CrmBillListComponent } from './Components/CRM/bill/crm-bill-list/crm-bill-list.component';
+import { CrmBillViewComponent } from './Components/CRM/bill/crm-bill-view/crm-bill-view.component';
 
 
 @NgModule({
@@ -455,7 +458,10 @@ import { DashBoardComponent } from './Components/DashBoard/dash-board/dash-board
                ModelBankRegisterComponent,
             ModelChequeEntriesComponent,
             ViewChequeEntriesComponent,
-            DashBoardComponent
+            DashBoardComponent,
+            CrmBillCreateComponent,
+            CrmBillListComponent,
+            CrmBillViewComponent
 
 
    ],

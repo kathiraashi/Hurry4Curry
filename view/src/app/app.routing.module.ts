@@ -73,6 +73,10 @@ import { ListChequeEntriesComponent } from './Components/Accounts/Cheque-Entries
 import { ViewChequeEntriesComponent } from './Components/Accounts/Cheque-Entries/view-cheque-entries/view-cheque-entries.component';
 import { DashBoardComponent } from './Components/DashBoard/dash-board/dash-board.component';
 
+import { CrmBillCreateComponent } from './Components/CRM/bill/crm-bill-create/crm-bill-create.component';
+import { CrmBillListComponent } from './Components/CRM/bill/crm-bill-list/crm-bill-list.component';
+import { CrmBillViewComponent } from './Components/CRM/bill/crm-bill-view/crm-bill-view.component';
+
 
 const appRoutes: Routes = [
    {
@@ -158,16 +162,22 @@ const appRoutes: Routes = [
       data: {   animation: { value: 'crm_customers_create'}   }
    },
    {
-      path: 'crm_invoice_list',
-      component: CrmInvoiceListComponent,
+      path: 'Crm_Bill_List',
+      component: CrmBillListComponent,
       canActivate: [AuthGuard],
-      data: {   animation: { value: 'crm_invoice_list'}   }
+      data: {   animation: { value: 'Crm_Bill_List'}   }
    },
    {
-      path: 'crm_invoice_create',
-      component: CrmInvoiceCreateComponent,
+      path: 'Crm_Bill_View',
+      component: CrmBillViewComponent,
       canActivate: [AuthGuard],
-      data: {   animation: { value: 'crm_invoice_create'}   }
+      data: {   animation: { value: 'Crm_Bill_View'}   }
+   },
+   {
+      path: 'Crm_Bill_Create',
+      component: CrmBillCreateComponent,
+      canActivate: [AuthGuard],
+      data: {   animation: { value: 'Crm_Bill_Create'}   }
    },
    //  {
    //      path: 'HRMS_DashBoard',

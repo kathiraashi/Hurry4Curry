@@ -131,7 +131,7 @@
  </div>
  
  <!-- Dropdown menus -->
- <mat-menu #Action="matMenu">
+ <mat-menu class="MenuStyleOne" #Action="matMenu" [overlapTrigger]="false" xPosition="after" yPosition="below">
     <button mat-menu-item [routerLink]="['/crm_customers_create']">
        <span>Edit</span>
     </button>
