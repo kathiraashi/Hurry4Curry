@@ -107,6 +107,13 @@
                         <span [routerLink]="['/Purchase_Bills_View']"></span>
                      </span>
                   </li>
+                  <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/List_Log_Expenses']">
+                     <a>Log Expenses</a>
+                     <span class="Hidden_Links">
+                        <span [routerLink]="['/Create_Log_Expenses']"></span>
+                        <span [routerLink]="['/View_Log_Expenses']"></span>
+                     </span>
+                  </li>
                   <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Bank_Registers_List']"><a>Bank Registers</a></li>
                   <li class="Menu_Tree_List" [routerLinkActive]="['active']" [routerLink]="['/Cash_Register_List']"><a>Cash Registers</a></li>
                </ul>

@@ -16,6 +16,7 @@
    import { ModalModule, AccordionModule} from 'ngx-bootstrap';
    import {CalendarModule} from 'primeng/calendar';
    import {MatButtonModule, MatFormFieldModule, MatSelectModule, MatCheckboxModule, MatMenuModule} from '@angular/material';
+   import {MatRadioModule} from '@angular/material/radio';
    import { NgSelectModule } from '@ng-select/ng-select';
 
 // Custom Modules
@@ -89,6 +90,10 @@ import { CrmBillListComponent } from './Components/CRM/bill/crm-bill-list/crm-bi
 import { CrmBillViewComponent } from './Components/CRM/bill/crm-bill-view/crm-bill-view.component';
 import { ReceiveProductListComponent } from './Components/Purchase/ReceiveProduct/receive-product-list/receive-product-list.component';
 import { ReceiveProductViewComponent } from './Components/Purchase/ReceiveProduct/receive-product-view/receive-product-view.component';
+import { CustomerPaymentsComponent } from './Components/Accounts/Payments/customer-payments/customer-payments.component';
+import { CreateLogExpensesComponent } from './Components/Accounts/Log-Expenses/create-log-expenses/create-log-expenses.component';
+import { ListLogExpensesComponent } from './Components/Accounts/Log-Expenses/list-log-expenses/list-log-expenses.component';
+import { ViewLogExpensesComponent } from './Components/Accounts/Log-Expenses/view-log-expenses/view-log-expenses.component';
 
 
 @NgModule({
@@ -159,7 +164,11 @@ import { ReceiveProductViewComponent } from './Components/Purchase/ReceiveProduc
             CrmBillListComponent,
             CrmBillViewComponent,
             ReceiveProductListComponent,
-            ReceiveProductViewComponent
+            ReceiveProductViewComponent,
+            CustomerPaymentsComponent,
+            CreateLogExpensesComponent,
+            ListLogExpensesComponent,
+            ViewLogExpensesComponent
 
 
    ],
@@ -182,6 +191,7 @@ import { ReceiveProductViewComponent } from './Components/Purchase/ReceiveProduc
          MatSelectModule,
          MatCheckboxModule,
          MatMenuModule,
+         MatRadioModule,
       // Custom Modules
          AppRoutingModule,
    ],

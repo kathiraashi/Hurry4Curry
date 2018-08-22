@@ -58,7 +58,7 @@
                         <span class="Style_1">Process</span>
                      </td>
                      <td>
-                        <button color="primary" mat-raised-button [routerLink]="['/Purchase_Bills_View']"> View </button>
+                        <button color="primary" mat-raised-button  [matMenuTriggerFor]="Action"> Action </button>
                      </td>
                   </tr>
                   <tr>
@@ -84,7 +84,7 @@
                         <span class="Style_1">Process</span>
                      </td>
                      <td>
-                        <button color="primary" mat-raised-button [routerLink]="['/Purchase_Bills_View']"> View </button>
+                        <button color="primary" mat-raised-button  [matMenuTriggerFor]="Action"> Action </button>
                      </td>
                   </tr>
                   <tr>
@@ -110,7 +110,7 @@
                         <span class="Style_1">Process</span>
                      </td>
                      <td>
-                        <button color="primary" mat-raised-button [routerLink]="['/Purchase_Bills_View']"> View </button>
+                        <button color="primary" mat-raised-button  [matMenuTriggerFor]="Action"> Action </button>
                      </td>
                   </tr>
                   <tr>
@@ -136,7 +136,7 @@
                         <span class="Style_1">Process</span>
                      </td>
                      <td>
-                        <button color="primary" mat-raised-button [routerLink]="['/Purchase_Bills_View']"> View </button>
+                        <button color="primary" mat-raised-button  [matMenuTriggerFor]="Action"> Action </button>
                      </td>
                   </tr>
                </tbody>
@@ -145,6 +145,16 @@
       </div>
    </div>
 </div>
+
+<!-- Dropdown menus -->
+<mat-menu #Action="matMenu" class="MenuStyleOne" [overlapTrigger]="false" xPosition="after" yPosition="below">
+   <button mat-menu-item [routerLink]="['/Purchase_Bills_View']">
+      <span>View</span>
+   </button>
+   <button mat-menu-item [routerLink]="['/Customer_Payments']">
+      <span>Register Payments</span>
+   </button>
+</mat-menu>
     
     
      

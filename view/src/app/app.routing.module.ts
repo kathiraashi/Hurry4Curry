@@ -46,7 +46,10 @@ import { CrmBillViewComponent } from './Components/CRM/bill/crm-bill-view/crm-bi
 
 import { ReceiveProductListComponent } from './Components/Purchase/ReceiveProduct/receive-product-list/receive-product-list.component';
 import { ReceiveProductViewComponent } from './Components/Purchase/ReceiveProduct/receive-product-view/receive-product-view.component';
-
+import { CustomerPaymentsComponent } from './Components/Accounts/Payments/customer-payments/customer-payments.component';
+import { ListLogExpensesComponent } from './Components/Accounts/Log-Expenses/list-log-expenses/list-log-expenses.component';
+import { CreateLogExpensesComponent } from './Components/Accounts/Log-Expenses/create-log-expenses/create-log-expenses.component';
+import { ViewLogExpensesComponent } from './Components/Accounts/Log-Expenses/view-log-expenses/view-log-expenses.component';
 
 const appRoutes: Routes = [
    {
@@ -186,6 +189,12 @@ const appRoutes: Routes = [
       data: {   animation: { value: 'Purchase_Bills_View'}   }
    },
    {
+      path: 'Customer_Payments',
+      component: CustomerPaymentsComponent,
+      canActivate: [AuthGuard],
+      data: {   animation: { value: 'Customer_Payments'}   }
+   },
+   {
       path: 'Bank_Registers_List',
       component: ListBankRegistersComponent,
       canActivate: [AuthGuard],
@@ -196,6 +205,24 @@ const appRoutes: Routes = [
       component: ListCashRegistersComponent,
       canActivate: [AuthGuard],
       data: {   animation: { value: 'Cash_Register_List'}   }
+   },
+   {
+      path: 'View_Log_Expenses',
+      component: ViewLogExpensesComponent,
+      canActivate: [AuthGuard],
+      data: {   animation: { value: 'View_Log_Expenses'}   }
+   },
+   {
+      path: 'List_Log_Expenses',
+      component: ListLogExpensesComponent,
+      canActivate: [AuthGuard],
+      data: {   animation: { value: 'List_Log_Expenses'}   }
+   },
+   {
+      path: 'Create_Log_Expenses',
+      component: CreateLogExpensesComponent,
+      canActivate: [AuthGuard],
+      data: {   animation: { value: 'Create_Log_Expenses'}   }
    },
    {
       path: 'Products_List',
