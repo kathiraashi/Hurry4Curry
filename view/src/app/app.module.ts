@@ -15,7 +15,7 @@
 // Future Modules
    import { ModalModule, AccordionModule} from 'ngx-bootstrap';
    import {CalendarModule} from 'primeng/calendar';
-   import {MatButtonModule, MatFormFieldModule, MatSelectModule, MatCheckboxModule, MatMenuModule} from '@angular/material';
+   import {MatButtonModule, MatFormFieldModule, MatSelectModule, MatCheckboxModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
    import {MatRadioModule} from '@angular/material/radio';
    import { NgSelectModule } from '@ng-select/ng-select';
 
@@ -192,6 +192,8 @@ import { ViewLogExpensesComponent } from './Components/Accounts/Log-Expenses/vie
          MatCheckboxModule,
          MatMenuModule,
          MatRadioModule,
+         MatDatepickerModule,
+         MatNativeDateModule,
       // Custom Modules
          AppRoutingModule,
    ],

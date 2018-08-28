@@ -1,24 +1,51 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var cors = require('cors');
-var path = require('path');
 
+var ErrorManagement = require('./server/handling/ErrorHandling.js');
+var LogManagement = require('./server/handling/LogHandling.js');
+var AdminModel = require('./server/web/models/Admin/AdminManagement.model.js');
+
+var port = process.env.PORT || 5000;
 var app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(bodyParser.json());
-
-
-app.use(express.static(__dirname + '/view/dist/view/'));
-
-app.use(function(req, res) {
-     res.sendFile(path.join(__dirname, '/view/dist/view', 'index.html'));
+// Process On Every Error
+process.setMaxListeners(0);
+process.on('unhandledRejection', (reason, promise) => {
+   ErrorManagement.ErrorHandling.ErrorLogCreation('', '', '', reason);
+   console.error("'Un Handled Rejection' Error Log File - " + new Date().toLocaleDateString());
+});
+process.on('uncaughtException', function (err) {
+  console.log(err);
+  
+   ErrorManagement.ErrorHandling.ErrorLogCreation('', '', '', err.toString());
+   console.error(" 'Un Caught Exception' Error Log File - " + new Date().toLocaleDateString());
 });
 
 
-var port = process.env.PORT || 5000;
+// DB Connection
 
-var server = app.listen(port, function(){
-  console.log('Listening on port ' + port);
+mongoose.connect('mongodb://kathiraashi:kathir143@ds129153.mlab.com:29153/hurry4curry');
+mongoose.connection.on('error', function(err) {
+   ErrorManagement.ErrorHandling.ErrorLogCreation('', 'Mongodb Connection Error', 'Server.js', err);
+});
+mongoose.connection.once('open', function() {
+   console.log('DB Connectivity, Success!');
+});
+
+
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+app.get('*', function(req, res){
+   res.send('This is Server Side Page');
+});
+
+
+app.listen(port, function(){
+ console.log('Listening on port ' + port);
 });

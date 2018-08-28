@@ -19,14 +19,19 @@
                <h5 class="SectionIdentity"> 
                   <span class="Highlight"> Bill </span> Details
                </h5>
+               <form [formGroup]="Form">
                <div class="row">
                   <div class="col-sm-4 Form_Select">
                      <ng-select class="NgSelect" [searchable]="true" placeholder="Customer Name (or) Mobile">
                         <ng-option *ngFor="let Customer of _Customers" [value]="Customer">{{Customer}}</ng-option>
                      </ng-select>
                   </div>
-                  <div class="col-sm-4 Form_Input" >
-                     <input type="text" placeholder="Date" [value]="TodayDate">
+                  <div class="col-sm-4 Form_Input" [ngClass]="{'Form_Err': !Form.controls['Date'].pristine && Form.controls['Date'].errors, 'Form_Success': Form.controls['Date'].valid && !Form.controls['Date'].pristine }">
+                     <input type="text" formControlName="Date" [matDatepicker]="Datepicker" (click)="Datepicker.open()" (keypress)="NotAllow()" (keydown)="NotAllow()" placeholder="Date">
+                     <mat-datepicker touchUi #Datepicker></mat-datepicker>
+                     <!-- <p class="error" *ngIf="Form.controls['Date'].errors && !Form.controls['Date'].pristine">
+                        <span *ngIf="Form.controls['Date'].errors.required"> Date is required</span>
+                     </p> -->
                   </div>
                   <div class="col-sm-4 Form_Input" >
                      <input type="text" placeholder="Bill Number"> 
@@ -40,6 +45,7 @@
                      <input type="text" placeholder="Reference Number"> 
                   </div>
                </div>
+            </form>
             </div>
          </div>
          <!-- Tab -->
