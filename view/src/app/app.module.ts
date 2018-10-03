@@ -8,6 +8,7 @@
    import { HttpModule } from '@angular/http';
    import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
    import { RouterModule, Routes } from '@angular/router';
+   import { ChipsModule } from 'primeng/chips';
 
 // Default Components
    import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@
    import {MatButtonModule, MatFormFieldModule, MatSelectModule, MatCheckboxModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
    import {MatRadioModule} from '@angular/material/radio';
    import { NgSelectModule } from '@ng-select/ng-select';
+   import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 // Custom Modules
    import { AppRoutingModule } from './app.routing.module';
@@ -94,6 +97,7 @@ import { CustomerPaymentsComponent } from './Components/Accounts/Payments/custom
 import { CreateLogExpensesComponent } from './Components/Accounts/Log-Expenses/create-log-expenses/create-log-expenses.component';
 import { ListLogExpensesComponent } from './Components/Accounts/Log-Expenses/list-log-expenses/list-log-expenses.component';
 import { ViewLogExpensesComponent } from './Components/Accounts/Log-Expenses/view-log-expenses/view-log-expenses.component';
+import { ModelUpdateQuantityComponent } from './models/Products/model-update-quantity/model-update-quantity.component';
 
 
 @NgModule({
@@ -168,7 +172,8 @@ import { ViewLogExpensesComponent } from './Components/Accounts/Log-Expenses/vie
             CustomerPaymentsComponent,
             CreateLogExpensesComponent,
             ListLogExpensesComponent,
-            ViewLogExpensesComponent
+            ViewLogExpensesComponent,
+            ModelUpdateQuantityComponent
 
 
    ],
@@ -194,12 +199,16 @@ import { ViewLogExpensesComponent } from './Components/Accounts/Log-Expenses/vie
          MatRadioModule,
          MatDatepickerModule,
          MatNativeDateModule,
+         ChipsModule,
       // Custom Modules
          AppRoutingModule,
+         BsDatepickerModule.forRoot(),
+
    ],
    providers: [AuthGuard],
    entryComponents: [
       DeleteConfirmationComponent,
+      ModelUpdateQuantityComponent
     ],
    bootstrap: [AppComponent]
 })

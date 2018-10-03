@@ -75,7 +75,7 @@ const appRoutes: Routes = [
       data: {   animation: { value: 'Crm_Customers_List'}   }
    },
    {
-      path: 'Crm_Customers_View',
+      path: 'Crm_Customers_View/:Customer_Id',
       component: MainCrmCustomersViewComponent,
       canActivate: [AuthGuard],
       data: {   animation: { value: 'Crm_Customers_View'}   }
@@ -105,7 +105,7 @@ const appRoutes: Routes = [
       data: {   animation: { value: 'Crm_Bill_Create'}   }
    },
    {
-      path: 'Purchase_Request_View',
+      path: 'Purchase_Request_View/:PurchaseRequest_Id',
       component: PurchaseRequestViewComponent,
       canActivate: [AuthGuard],
       data: {   animation: { value: 'Purchase_Request_View'}   }
@@ -129,7 +129,7 @@ const appRoutes: Routes = [
       data: {   animation: { value: 'Receive_Product_List'}   }
    },
    {
-      path: 'Receive_Product_View',
+      path: 'Receive_Product_View/:ReceiveProducts_Id',
       component: ReceiveProductViewComponent,
       canActivate: [AuthGuard],
       data: {   animation: { value: 'Receive_Product_View'}   }

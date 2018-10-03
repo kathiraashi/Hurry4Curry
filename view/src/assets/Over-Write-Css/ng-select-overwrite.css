@@ -16,10 +16,14 @@
    box-shadow: none;
 }
 
+.ng-dropdown-panel.ng-select-top  {
+    left: 0px;
+}
 .ng-select.NgSelect .ng-dropdown-panel.ng-select-bottom{
    border-radius: 0px;
    border: 1px solid #e2e2e2;
    box-shadow: 2px 2px 7px 0px #00000042;
+   left: 0px !important;
 }
 .ng-select.NgSelect .ng-dropdown-panel .ng-dropdown-panel-items{
    margin: 0px;

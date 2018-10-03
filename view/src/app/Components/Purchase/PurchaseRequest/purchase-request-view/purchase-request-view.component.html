@@ -22,34 +22,34 @@
                <div class="view_item">
                   <div class="Static">Ref Number </div>
                   <div class="dots"> : </div>
-                  <div class="Data"> Req-00123</div>
+                  <div class="Data">{{_Data?.PurchaseRequest_Details['PurchaseRequest_RefNo']}}</div>
                </div>
                <div class="view_item">
                   <div class="Static"> Requested By </div>
                   <div class="dots"> : </div>
-                  <div class="Data"> Customer Name </div>
+                  <div class="Data">{{_Data?.PurchaseRequest_Details['User_Id']['Name']}}</div>
                </div>
                <div class="view_item">
                   <div class="Static"> Hub </div>
                   <div class="dots"> : </div>
-                  <div class="Data"> Hub One </div>
+                  <div class="Data"> {{_Data?.PurchaseRequest_Details['Hub_Id']['Name']}} </div>
                </div>
                <div class="view_item">
-                  <div class="Static">Date</div>
+                  <div class="Static">Requested Date</div>
                   <div class="dots"> : </div>
-                  <div class="Data"> 15/08/2018 </div>
+                  <div class="Data"> {{_Data?.PurchaseRequest_Details['PurchaseRequest_Date'] | date}} </div>
                </div>
                <div class="view_item">
-                  <div class="Static"> Description </div>
-                  <div class="dots"> : </div>
-                  <div class="Data"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ad accusamus architecto molestias facere mollitia consequatur sapiente incidunt. </div>
-               </div>
+                <div class="Static">Expected Date</div>
+                <div class="dots"> : </div>
+                <div class="Data"> {{_Data?.PurchaseRequest_Details['Expected_Date'] | date}} </div>
+             </div>
                <br>
                <div> 
-                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Approve </button>
+                  <button *ngIf="_Data?.PurchaseRequest_Details['PurchaseRequest_Status'] === 'Requested'" mat-raised-button color="primary" style ="margin-left: 10px;" (click)="Approve(template)"> Approve </button>
                   <button mat-raised-button color="primary" style ="margin-left: 10px;"> Reject </button>
-                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Forward </button>
-                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Modify </button>
+                  <!-- <button mat-raised-button color="primary" style ="margin-left: 10px;"> Forward </button> -->
+                  <!-- <button mat-raised-button color="primary" style ="margin-left: 10px;" (click)="Edit()"> Edit </button> -->
                </div>
             </div>
          <br>
@@ -66,86 +66,25 @@
                         <tr>
                            <th> S.no </th>
                            <th> Product </th>
-                           <th> Quantity</th>
-                           <th> Tax </th>
-                           <th> Total </th>
+                           <th> Requested Quantity</th>
                         </tr>
                      </thead>
                      <tbody>
-                        <tr>
+                        <tr *ngFor="let item of _Data?.PurchaseRequest_Product_Details; let i = index">
                            <td>
-                              <span class="S_no"> 1 </span>
+                              <span class="S_no"> {{i+1}} </span>
                            </td>
                            <td>
-                              <span class="Style_1">Product Name</span>
+                              <span class="Style_1">{{item?.Product_Id['Name_withAttribute']}}</span>
                            </td>
                            <td>
-                              <span class="Style_1"> 5 </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> 10% </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> Rs.5000 </span>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <span class="S_no"> 2 </span>
-                           </td>
-                           <td>
-                              <span class="Style_1">Product Name</span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> 3 </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> 10% </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> Rs.450 </span>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <span class="S_no"> 3 </span>
-                           </td>
-                           <td>
-                              <span class="Style_1">Product Name</span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> 2 </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> 10% </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> Rs.500 </span>
+                              <span class="Style_1"> {{item?.Quantity}} </span>
                            </td>
                         </tr>
                      </tbody>
                   </table>
                </div>
                <div class="row" style="margin-top: 20px;">
-                  <div class="col-sm-8">
-                  </div>
-                  <div class="col-sm-4">
-                     <div class="ResultSection">
-                        <span class="Title"> Sub Total </span>
-                        <span class="Split"> : </span>
-                        <span class="Value"> Rs.0000 </span>
-                     </div>
-                     <div class="ResultSection">
-                        <span class="Title"> Total Tax</span>
-                        <span class="Split"> : </span>
-                        <span class="Value"> Rs.0000 </span>
-                     </div>
-                     <div class="ResultSection">
-                        <span class="Title"> Total </span>
-                        <span class="Split"> : </span>
-                        <span class="Value"> Rs.0000 </span>
-                     </div>
-                  </div>
                </div>
             </div>
             <br>
@@ -153,3 +92,57 @@
       </div>
    </div>
 </div>
+
+
+
+
+<ng-template #template>
+   <div class="Modal_Content">
+      <div class="Modal_Header">
+        <p>Update Stock Quantity</p>
+        <span data-dismiss="modal" (click)="modalRef.hide(); ">&times;</span>
+      </div>
+      <div class="Model_Body">
+         <div class="Table_Section">
+            <form [formGroup]="Form" >
+               <table>
+                  <thead>
+                     <tr>
+                        <th >S.No</th>  
+                        <th>Product</th>  
+                        <th>Quantity</th>  
+                        <th>Approved Quantity</th> 
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <ng-container formArrayName="Products" *ngFor="let item of Form.get('Products')['controls']; let i = index;" >
+                        <tr [formGroupName]="i" >
+                           <td>
+                              <span class="Style_1"> {{i+1}} </span> 
+                           </td>
+                           <td>
+                              <div class="Form_Input">
+                                 <input type="text" formControlName="ProductName">
+                              </div>
+                           </td>
+                           <td>
+                              <div class="Form_Input">
+                                 <input type="text" formControlName="Quantity">
+                              </div>
+                           </td>
+                           <td>
+                              <div class="Form_Input">
+                                 <input type="text" formControlName="Approved_Quantity">
+                              </div>
+                           </td>
+                        </tr>                      
+                     </ng-container>
+                  </tbody>
+               </table>
+               <button mat-raised-button color="primary" style ="margin: 10px 0px 10px 10px; float: right;" (click)="Submit()"> Submit </button>
+            </form>
+            <br>
+         </div>
+      </div>
+  </div>
+</ng-template>

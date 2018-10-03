@@ -32,118 +32,37 @@
                      <th>Request No</th>
                      <th>Requested By</th>
                      <th> Hub </th>
-                     <th>Date</th>
+                     <th>Requested Date</th>
+                     <th>Expected Date</th>
                      <th>Status</th>
-                     <th>Total</th>
                      <th>Action</th>
                   </tr>
                </thead>
                <tbody>
-                  <tr>
+                  <tr *ngFor = "let item of _PurchaseRequestList; let i = index">
                      <td>
-                        <span class="S_no"> 1 </span>
+                        <span class="S_no"> {{i+1}} </span>
                      </td>
                      <td>
-                        <span class="Style_1">344354</span>
+                        <span class="Style_1">{{item?.PurchaseRequest_RefNo}}</span>
                      </td>
                      <td>
-                        <span class="Style_1"> Customer Name</span>
+                        <span class="Style_1">{{item['Hub_Id']?.Name}}</span>
                      </td>
                      <td>
-                        <span class="Style_1"> Hub One </span>
+                        <span class="Style_1">{{item['User_Id']?.Name}}</span>
                      </td>
                      <td>
-                        <span class="Style_1">25/05/2017</span>
+                        <span class="Style_1">{{item?.PurchaseRequest_Date | date}}</span>
                      </td>
                      <td>
-                        <span class="Style_1">Requested</span>
+                        <span class="Style_1">{{item?.Expected_Date | date}}</span>
                      </td>
                      <td>
-                        <span class="Style_1">35000</span>
+                        <span class="Style_1">{{item?.PurchaseRequest_Status}}</span>
                      </td>
                      <td>
-                        <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action
-                        </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <span class="S_no"> 2 </span>
-                     </td>
-                     <td>
-                        <span class="Style_1">344354</span>
-                     </td>
-                     <td>
-                        <span class="Style_1"> Customer Name</span>
-                     </td>
-                     <td>
-                        <span class="Style_1"> Hub One </span>
-                     </td>
-                     <td>
-                        <span class="Style_1">25/05/2017</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">Requested</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">35000</span>
-                     </td>
-                     <td>
-                        <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action
-                        </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <span class="S_no"> 3 </span>
-                     </td>
-                     <td>
-                        <span class="Style_1">344354</span>
-                     </td>
-                     <td>
-                        <span class="Style_1"> Customer Name</span>
-                     </td>
-                     <td>
-                        <span class="Style_1"> Hub One </span>
-                     </td>
-                     <td>
-                        <span class="Style_1">25/05/2017</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">Requested</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">35000</span>
-                     </td>
-                     <td>
-                        <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action
-                        </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <span class="S_no"> 4 </span>
-                     </td>
-                     <td>
-                        <span class="Style_1">344354</span>
-                     </td>
-                     <td>
-                        <span class="Style_1"> Customer Name</span>
-                     </td>
-                     <td>
-                        <span class="Style_1"> Hub One </span>
-                     </td>
-                     <td>
-                        <span class="Style_1">25/05/2017</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">Requested</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">35000</span>
-                     </td>
-                     <td>
-                        <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action
+                        <button color="primary" mat-raised-button (click)="View(i)">View
                         </button>
                      </td>
                   </tr>
@@ -154,26 +73,3 @@
    </div>
 </div>
 
-<!-- Dropdown menus -->
-<mat-menu #Action="matMenu" class="MenuStyleOne" [overlapTrigger]="false" xPosition="after" yPosition="below">
-   <button mat-menu-item [routerLink]="['/Purchase_Request_Create']">
-      <span>Edit</span>
-   </button>
-   <button mat-menu-item [routerLink]="['/Purchase_Request_View']">
-      <span>View</span>
-   </button>
-   <button mat-menu-item>
-      <span>Delete</span>
-   </button>
-   <!-- <button mat-menu-item>
-      <span>Approve</span>
-   </button>
-   <button mat-menu-item>
-      <span>Modify</span>
-   </button>
-   <button mat-menu-item>
-      <span>Reject</span>
-   </button> -->
-</mat-menu>
-   
-   

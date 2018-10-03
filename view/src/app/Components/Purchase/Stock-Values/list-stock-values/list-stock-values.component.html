@@ -1,140 +1,75 @@
+<!-- Main Section -->
 <div class="Main_Section">
-   <div class="page_section">
-      <div class="container-fluid">
-         <!-- Page Identity -->
-         <div class="Page_Identity">
-            <div class="Page_Track">
-               <ul >
-                  <li class="HeaderName">Inventory</li>
-                  <li class="arrow">>></li>
-                  <li > Stock Values List </li>
-               </ul>
+    <div class="page_section">
+       <div class="container-fluid">
+          <!-- Page Identity -->
+          <div class="Page_Identity">
+            <div class="Page_Name">
+                <h5>STOCK LIST</h5>
             </div>
-         </div>
-         <!-- Header Part -->
-         <div class="row header_part">
-            <div class="col-sm-6">
+             <div class="Page_Track">
+                <ul >
+                   <li class="HeaderName">Inventory</li>
+                   <li class="arrow">>></li>
+                   <li> Stock Values</li>
+                </ul>
              </div>
-            <div class="col-sm-6">
-               <div class="Search_Section">
-                  <input type="text" placeholder="Search.." name="search">
-                  <i class="material-icons">search</i>
-               </div>
-            </div>
-         </div>
-         <!-- Table section -->
-         <div class="Table_Section">
-            <table>
-               <thead>
-                  <tr>
-                     <th>S.no</th>
-                     <th>WareHouse</th>
-                     <th>Product</th>
-                     <th>Quantity</th>
-                     <th>Location</th>
-                     <th>Incoming Date</th>
-                     <th>Action</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr>
+          </div>
+          <!-- Header Part -->
+          <div class="row header_part">
+             <div class="col-sm-6">
+              </div>
+             <div class="col-sm-6">
+                <div class="Search_Section">
+                   <input type="text" placeholder="Search.." name="search">
+                   <i class="material-icons">search</i>
+                </div>
+             </div>
+          </div>
+          <!-- Table section -->
+          <div class="Table_Section">
+             <table>
+                <thead>
+                   <tr>
+                      <th>S.no</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Updated Date</th>
+                      <th>Action</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr *ngFor="let item of _List; let i = index">
                      <td>
-                        <span class="S_no"> 1 </span>
-                     </td>
+                         <span class="S_no">{{i+1}}</span>
+                      </td>
                      <td>
-                        <span class="Style_1">WareHouse1</span>
-                     </td>
+                         <span class="Style_1"> {{item['Product_Id']?.Name_withAttribute}} </span>
+                      </td>
                      <td>
-                        <span class="Style_1"> xxxx</span>
-                     </td>
+                         <span class="Style_1"> {{item.Current_Quantity}} </span>
+                      </td>
                      <td>
-                        <span class="Style_1">20</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">Chennai</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">25/05/2017</span>
-                     </td>
-                     <td>
-                        <button color="primary" mat-raised-button [routerLink]="['/Stock_Values_View']"> View </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <span class="S_no"> 2 </span>
-                     </td>
-                     <td>
-                        <span class="Style_1">WareHouse1</span>
-                     </td>
-                     <td>
-                        <span class="Style_1"> xxxx</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">20</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">Chennai</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">25/05/2017</span>
-                     </td>
-                     <td>
-                        <button color="primary" mat-raised-button [routerLink]="['/Stock_Values_View']"> View </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <span class="S_no"> 3 </span>
-                     </td>
-                     <td>
-                        <span class="Style_1">WareHouse1</span>
-                     </td>
-                     <td>
-                        <span class="Style_1"> xxxx</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">20</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">Chennai</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">25/05/2017</span>
-                     </td>
-                     <td>
-                        <button color="primary" mat-raised-button [routerLink]="['/Stock_Values_View']"> View </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <span class="S_no"> 4 </span>
-                     </td>
-                     <td>
-                        <span class="Style_1">WareHouse1</span>
-                     </td>
-                     <td>
-                        <span class="Style_1"> xxxx</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">20</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">Chennai</span>
-                     </td>
-                     <td>
-                        <span class="Style_1">25/05/2017</span>
-                     </td>
-                     <td>
-                        <button color="primary" mat-raised-button [routerLink]="['/Stock_Values_View']"> View </button>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-      </div>
-   </div>
-</div>
-
-   
-   
+                         <span class="Style_1"> {{item.updatedAt | date:'medium' }} </span>
+                      </td>
+                      <td>
+                         <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action</button>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+ 
+ <!-- Dropdown menus -->
+ <mat-menu class="MenuStyleOne" #Action="matMenu" [overlapTrigger]="false" xPosition="after" yPosition="below" class="MenuStyleOne">
+    <button mat-menu-item [routerLink]="['/View_Stock_Values']">
+       <span>View</span>
+    </button>
+    <button mat-menu-item (click)="DeleteStockValues()">
+       <span>Delete</span>
+    </button>
+ </mat-menu>
+ 

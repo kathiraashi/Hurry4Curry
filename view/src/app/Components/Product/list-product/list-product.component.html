@@ -3,11 +3,14 @@
 <div class="Page_Section">
   <div class="container-fluid">
     <div class="Page_Identity">
+      <div class="Page_Name">
+         <h5>PRODUCT LIST</h5>
+      </div>
       <div class="Page_Track">
         <ul>
-          <li class="HeaderName">Product</li>
+          <li class="HeaderName">Home</li>
           <li class="arrow">>></li>
-          <li>Products List</li>
+          <li>Product</li>
         </ul>
       </div>
     </div>
@@ -27,103 +30,40 @@
     <!-- Table Section -->
     <div class="Table_Section">
       <table>
-        <thead>
-          <tr>
-            <th>S.no</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Price</th>
-            <th>UOM</th>
-            <th>Available Stock</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <span class="S_no"> 1 </span>
-            </td>
-            <td>
-              <span class="Style_1">Name</span>
-            </td>
-            <td>
-              <span class="Style_1"> Type-11</span>
-            </td>
-            <td>
-              <span class="Style_1">1000</span>
-            </td>
-            <td>
-              <span class="Style_1">Unit of measure</span>
-            </td>
-            <td>
-              <span class="Style_1">10</span>
-            </td>
-            <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
-          </tr>
-          <tr>
-            <td>
-              <span class="S_no"> 2 </span>
-            </td>
-            <td>
-              <span class="Style_1">Name</span>
-            </td>
-            <td>
-              <span class="Style_1"> Type-11</span>
-            </td>
-            <td>
-              <span class="Style_1">1000</span>
-            </td>
-            <td>
-              <span class="Style_1">Unit of measure</span>
-            </td>
-            <td>
-              <span class="Style_1">10</span>
-            </td>
-            <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
-          </tr>
-          <tr>
-            <td>
-              <span class="S_no"> 3 </span>
-            </td>
-            <td>
-              <span class="Style_1">Name</span>
-            </td>
-            <td>
-              <span class="Style_1"> Type-11</span>
-            </td>
-            <td>
-              <span class="Style_1">1000</span>
-            </td>
-            <td>
-              <span class="Style_1">Unit of measure</span>
-            </td>
-            <td>
-              <span class="Style_1">10</span>
-            </td>
-            <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
-          </tr>
-          <tr>
-            <td>
-              <span class="S_no"> 4 </span>
-            </td>
-            <td>
-              <span class="Style_1">Name</span>
-            </td>
-            <td>
-              <span class="Style_1"> Type-11</span>
-            </td>
-            <td>
-              <span class="Style_1">1000</span>
-            </td>
-            <td>
-              <span class="Style_1">Unit of measure</span>
-            </td>
-            <td>
-              <span class="Style_1">10</span>
-            </td>
-            <button mat-raised-button color="primary" [matMenuTriggerFor]="Action"> Action </button>
-          </tr>
-        </tbody>
+         <thead>
+            <tr>
+               <th> S.no </th>
+               <th> Name </th>
+               <th> Item Code</th>
+               <th> HSN Code </th>
+               <th> UOM </th>
+               <th> Available Stock </th>
+               <th> Action </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let Product of _List; let i=index">
+               <td>
+               <span class="S_no"> {{i+ 1}} </span>
+               </td>
+               <td>
+               <span class="Style_1"> {{Product['Name_withAttribute']}} </span>
+               </td>
+               <td>
+               <span class="Style_1"> {{Product['Item_Code']}} </span>
+               </td>
+               <td>
+               <span class="Style_1"> {{Product['Hsn_Code']}} </span>
+               </td>
+               <td>
+               <span class="Style_1"> {{Product['UnitOfMeasure']?.Product_UnitOfMeasure}} </span>
+               </td>
+               <td>
+                  <span class="Style_1"> {{Product['Current_Quantity']}} </span>
+               </td>
+               <button mat-raised-button color="primary" [matMenuTriggerFor]="Action" (click)="SetActionId(i)"> Action </button>
+            </tr>
+         </tbody>
       </table>
     </div>
     <br>
@@ -131,17 +71,17 @@
 </div>
 
 <!-- Dropdown menus -->
-<mat-menu #Action="matMenu" class="MenuStyleOne" [overlapTrigger]="false" yPosition="below" xPosition="after">
-  <button mat-menu-item [routerLink]="['/Product_Create']">
+<mat-menu class="MenuStyleOne" #Action="matMenu" [overlapTrigger]="false" xPosition="after" yPosition="below" class="MenuStyleOne">
+  <button mat-menu-item (click)="Edit()">
     <span>Edit</span>
   </button>
-  <button mat-menu-item [routerLink]="['/Product_View']">
+  <button mat-menu-item (click)="View()">
     <span>View</span>
   </button>
   <button mat-menu-item>
     <span>Delete</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="Update()">
     <span>Update Stock Quantity</span>
   </button>
 </mat-menu>

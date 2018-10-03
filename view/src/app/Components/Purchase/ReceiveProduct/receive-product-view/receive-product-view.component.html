@@ -6,7 +6,7 @@
          <ul>
             <li class="HeaderName">Inventory</li>
             <li class="arrow">>></li>
-            <li class="LinkName" [routerLink]="['/Receive_Product_List']">Receive Products List</li>
+            <li class="LinkName"  [routerLink]="['/Receive_Product_List']" >Receive Products List</li>
             <li class="arrow">>></li>
             <li>Receive Products View</li>
          </ul>
@@ -22,31 +22,36 @@
                <div class="view_item">
                   <div class="Static">Inward Ref </div>
                   <div class="dots"> : </div>
-                  <div class="Data"> Ref-00123</div>
+                  <div class="Data"> {{ _List?.ReceiveProducts_Details['PurchaseRequest_RefNo']}} </div>
                </div>
                <div class="view_item">
-                  <div class="Static">Date</div>
+                  <div class="Static">Requested Date</div>
                   <div class="dots"> : </div>
-                  <div class="Data"> 15/08/2018 </div>
+                  <div class="Data"> {{ _List?.ReceiveProducts_Details['PurchaseRequest_Date'] | date}} </div>
                </div>
+               <div class="view_item">
+                <div class="Static">Expected Date</div>
+                <div class="dots"> : </div>
+                <div class="Data"> {{ _List?.ReceiveProducts_Details['Expected_Date'] | date}} </div>
+             </div>
+             <div class="view_item">
+                <div class="Static">Delivered Date</div>
+                <div class="dots"> : </div>
+                <div class="Data"> {{ _List?.ReceiveProducts_Details['Delivered_Date'] | date}} </div>
+             </div>
                <div class="view_item">
                   <div class="Static"> Hub </div>
                   <div class="dots"> : </div>
-                  <div class="Data"> Hub One </div>
+                  <div class="Data"> {{ _List?.ReceiveProducts_Details['Hub_Id']['Name']}} </div>
                </div>
-               <div class="view_item">
+               <!-- <div class="view_item">
                   <div class="Static"> Purchase Order No </div>
                   <div class="dots"> : </div>
                   <div class="Data"> Order-0123 </div>
-               </div>
-               <div class="view_item">
-                  <div class="Static"> Purchase Date </div>
-                  <div class="dots"> : </div>
-                  <div class="Data"> 15/08/2018  </div>
-               </div>
+               </div> -->
                <br>
                <div> 
-                  <button mat-raised-button color="primary" style ="margin-left: 10px;"> Receive </button>
+                  <button *ngIf="_List?.ReceiveProducts_Details['FranchiseeCurrent_Status'] === 'Requested'" mat-raised-button color="primary" style ="margin-left: 10px;" (click)="Receive()"> Receive </button>
                   <button mat-raised-button color="primary" style ="margin-left: 10px;"> Return </button>
                   <button mat-raised-button color="primary" style ="margin-left: 10px;"> Back </button>
                </div>
@@ -65,86 +70,27 @@
                         <tr>
                            <th> S.no </th>
                            <th> Product </th>
-                           <th> Quantity</th>
-                           <th> Tax </th>
-                           <th> Total </th>
+                           <th> Requested Quantity</th>
+                           <th> Delivered Quantity </th>
                         </tr>
                      </thead>
                      <tbody>
-                        <tr>
+                        <tr *ngFor="let item of _List?.ReceiveProducts_Product_Details; let i = index">
                            <td>
-                              <span class="S_no"> 1 </span>
+                              <span class="S_no"> {{i+1}} </span>
                            </td>
                            <td>
-                              <span class="Style_1">Product Name</span>
+                              <span class="Style_1">{{item?.Product_Id['Name_withAttribute']}}</span>
                            </td>
                            <td>
-                              <span class="Style_1"> 5 </span>
+                              <span class="Style_1"> {{item?.Requested_Quantity}} </span>
                            </td>
                            <td>
-                              <span class="Style_1"> 10% </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> Rs.5000 </span>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <span class="S_no"> 2 </span>
-                           </td>
-                           <td>
-                              <span class="Style_1">Product Name</span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> 3 </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> 10% </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> Rs.450 </span>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <span class="S_no"> 3 </span>
-                           </td>
-                           <td>
-                              <span class="Style_1">Product Name</span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> 2 </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> 10% </span>
-                           </td>
-                           <td>
-                              <span class="Style_1"> Rs.500 </span>
+                              <span class="Style_1"> {{item?.Deliver_Quantity }} </span>
                            </td>
                         </tr>
                      </tbody>
                   </table>
-               </div>
-               <div class="row" style="margin-top: 20px;">
-                  <div class="col-sm-8">
-                  </div>
-                  <div class="col-sm-4">
-                     <div class="ResultSection">
-                        <span class="Title"> Sub Total </span>
-                        <span class="Split"> : </span>
-                        <span class="Value"> Rs.0000 </span>
-                     </div>
-                     <div class="ResultSection">
-                        <span class="Title"> Total Tax</span>
-                        <span class="Split"> : </span>
-                        <span class="Value"> Rs.0000 </span>
-                     </div>
-                     <div class="ResultSection">
-                        <span class="Title"> Total </span>
-                        <span class="Split"> : </span>
-                        <span class="Value"> Rs.0000 </span>
-                     </div>
-                  </div>
                </div>
             </div>
             <br>

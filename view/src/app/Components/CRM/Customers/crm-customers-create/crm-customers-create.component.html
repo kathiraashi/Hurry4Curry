@@ -1,57 +1,62 @@
+<!-- page -->
 <div class="page" style="margin-top:100px;margin-bottom:100px;">
-   <div class="container-fluid">
-      <!-- Page Identity -->
+    <div class="container-fluid">
+      <!-- page Identity -->
       <div class="Page_Identity">
-         <div class="Page_Track">
-            <ul>
-               <li class="HeaderName">Sales</li>
-               <li class="arrow">>></li>
-               <li class="LinkName" [routerLink]="['/Crm_Customers_List']">Customers List</li>
-               <li class="arrow">>></li>
-               <li >Customers Create</li>
-            </ul>
-         </div>
+        <!-- <div class="Page_Name">
+          <h5>CUSTOMER CREATE</h5>
+        </div> -->
+        <div class="Page_Track">
+          <ul>
+            <li class="HeaderName">Customer</li>
+            <li class="arrow">>></li>
+            <li class="LinkName" [routerLink]="['/Crm_Customers_List']">Customer List</li>
+            <li class="arrow">>></li>
+            <li>Customer Create</li>
+          </ul>
+        </div>
       </div>
-      <form>
-         <div class="row">
-            <!-- Company details -->
-            <div class="col-sm-12">
-               <div class="Company_Details">
-                  <div class="row">
-                     <div class="col-sm-4 Form_Input">
-                        <label>Customer Name:</label>
-                        <br>
-                        <input type="text">
-                     </div>
-                     <div class="col-sm-4 Form_Input">
-                        <label>Contact No:</label>
-                        <br>
-                        <input type="text">
-                     </div>
-                     <div class="col-sm-4 Form_Input">
-                        <label>GST NO:</label>
-                        <br>
-                        <input type="text" >
-                     </div>
-                     <div class="col-sm-4 Form_Input">
-                        <label>Email Id:</label>
-                        <br>
-                        <input type="text" >
-                     </div>
-                     <div class="col-sm-4 Form_TextArea">
-                        <label>Address:</label>
-                        <br>
-                        <textarea class="Description" rows="3"></textarea>
-                     </div>
-                  </div>
-                  <div class="row" style="margin-top:20px;">
-                     <div class="col-sm-12 text-right">
-                        <button mat-raised-button color="primary"> Submit </button>
-                     </div>
-                  </div>
-               </div>
+      <form [formGroup]="Form">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="BoxStyle_1">
+              <h5 class="BoxHeader"> Customer Details</h5>
+              <div class="row">
+                <div class="col-sm-4 Form_Input" [ngClass]="{'Form_Err': !Form.controls['Name'].pristine && Form.controls['Name'].errors, 'Form_Success': Form.controls['Name'].valid && !Form.controls['Name'].pristine }">    
+                  <input type="text" formControlName="Name" placeholder="Customer name:">
+                  <p class="error" *ngIf="Form.controls['Name'].errors && !Form.controls['Name'].pristine">
+                    <span *ngIf="Form.controls['Name'].errors.required"> Name is required</span>
+                  </p>
+                </div>
+                <div class="col-sm-4 Form_Input" [ngClass]="{'Form_Err': !Form.controls['Phone'].pristine && Form.controls['Phone'].errors, 'Form_Success': Form.controls['Phone'].valid && !Form.controls['Phone'].pristine }">
+                  <input type="text" formControlName="Phone" placeholder="Phone number:">
+                  <p class="error" *ngIf="Form.controls['Phone'].errors && !Form.controls['Phone'].pristine">
+                    <span *ngIf="Form.controls['Phone'].errors.required"> Phone Number is required</span>
+                    <span *ngIf="Form.controls['Phone'].errors && !Form.controls['Phone'].errors.required">Phone number already exits</span>
+                  </p>
+                </div>
+                <div class="col-sm-4 Form_Input" [ngClass]="{'Form_Err': !Form.controls['Email'].pristine && Form.controls['Email'].errors, 'Form_Success': Form.controls['Email'].valid && !Form.controls['Email'].pristine }">
+                  <input type="text" formControlName="Email" placeholder="Email: (optional)">
+                </div>
+                <div class="col-sm-4 Form_Input">
+                  <input type="text" formControlName="GSTNo" placeholder="GST Number: (optional)">
+                </div>
+                <div class="col-sm-4 Form_Input">
+                    <textarea type="text" formControlName="Address" placeholder="Address: (optional)" row="5" cols="56"></textarea>
+                </div>
+              </div>
             </div>
-         </div>
+          </div>
+        </div>
+        <div class="FormSubmitSection">
+          <div class="row">
+            <div class="col-sm-12 text-right">
+              <button type="button" [disabled]="Form.status !== 'VALID' || Loader" (click)="Submit()" mat-raised-button
+                color="primary"> Submit </button>
+            </div>
+          </div>
+        </div>
       </form>
-   </div>
-</div>
+    </div>
+  </div>
+  

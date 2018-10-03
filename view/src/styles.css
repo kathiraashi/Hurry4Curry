@@ -132,3 +132,14 @@ body {
  .LoadedDataStyle_1.Show{
    display: block;
  }
+ /* Datepickerstyle */
+ body .bs-datepicker-container .bs-datepicker-head {
+  background-color: #c00a27;
+}
+.theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*="select-"]:after, .theme-green .bs-datepicker-body table td[class*="select-"] span:after {
+  background-color: #c00a27;
+}
+.theme-green .bs-datepicker-body table td.week span {
+  color: #c00a27;
+}
+ 
